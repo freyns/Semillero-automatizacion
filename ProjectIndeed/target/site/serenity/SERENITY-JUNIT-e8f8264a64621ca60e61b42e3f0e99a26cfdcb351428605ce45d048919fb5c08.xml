@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Validate the login, search and selection of a job" skipped="0" tests="1" time="37.43" timestamp="2018-12-02 07:37:02"><testcase name="apply for a job at indeed.com"><error message="The getCssOrXPathSelector() method is not supported for By-type Targets" type="java.lang.UnsupportedOperationException">The getCssOrXPathSelector() method is not supported for By-type Targets</error><system-err>The getCssOrXPathSelector() method is not supported for By-type Targets&#13;
+com.indeed.co.certification.interactions.ClickOnWebElement.performAs(ClickOnWebElement.java:27)&#13;
+com.indeed.co.certification.task.ClickOn.performAs(ClickOn.java:14)&#13;
+com.indeed.co.certification.stepdefinitions.SelectJobStepDefinitions.he_selects_a_job_offer_from_the_job_list(SelectJobStepDefinitions.java:40)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)&#13;
+org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)&#13;
+</system-err></testcase></testsuite>
