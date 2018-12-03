@@ -1,6 +1,6 @@
 package com.indeed.co.certification.runners;
 
-// Import reuqeridos por la clase
+// Import requeridos por la clase
 import org.junit.runner.RunWith;
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;

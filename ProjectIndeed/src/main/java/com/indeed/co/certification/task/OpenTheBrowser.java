@@ -1,7 +1,9 @@
 package com.indeed.co.certification.task;
 
-//import requeridas por el script
+//Import requeridos por la clase
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import com.indeed.co.certification.exceptions.WithoutConnectionToTheNetwork;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -10,25 +12,32 @@ import net.thucydides.core.annotations.Step;
 
 public class OpenTheBrowser implements Task {
 
-	// creamos una variable privada
+	// variable privada de la clase
 	private PageObject page;
 	
-	// metodo constructor que inicializa la variable
+	// constructor
 	public OpenTheBrowser(PageObject page) {
 		this.page = page;
 	}
 	
-	// Metodo sobreescrito de la clase Task
+	// Metodo sobreescrito de la Interface
 	@Override
 	@Step("{0} open the Browser on Indeed Home Page")
 	public <T extends Actor> void performAs(T actor) {		
-		actor.attemptsTo(Open.browserOn(page));			// Nos indica que el actor tiene la habilidad de abrir el navegador
+		actor.attemptsTo(Open.browserOn(page));
 		// Open, Click, Enter, Hit, ...
+		actor.should(seeThat(IndeedPageVisible.isVisible()).orComplainWith(WithoutConnectionToTheNetwork.class,
+				getNoInternetConectionMessage()));
+	}
+	
+	// Metodo que accede al metodo de la clase getErrorNetworkMessage de WithoutConnectionToTheNetwork
+	public String getNoInternetConectionMessage() {
+		return String.format(WithoutConnectionToTheNetwork.getErrorNetworkMessage());
+
 	}
 
-	public static OpenTheBrowser on(PageObject page) {
 	// Instrumented por debajo llama al constructor de la clase que se ajuste a los parametros
-	// return new OpenBrowser(PageLoginIndeed);
+	public static OpenTheBrowser on(PageObject page) {
 		return instrumented(OpenTheBrowser.class, page);	
 	}
 		

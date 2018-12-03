@@ -6,6 +6,7 @@ public class UnableToLogin extends AssertionError{
 	private static final long serialVersionUID = 1L;
 	private static final String UNABLE_TO_LOGIN = "Unable to login";		// Variable que guarda el texto a mostrar en caso de error
 	
+	// Metodo que accede a la variable privada
 	public static String getUnableToLoginMessage() {
 		return UNABLE_TO_LOGIN;
 	}
